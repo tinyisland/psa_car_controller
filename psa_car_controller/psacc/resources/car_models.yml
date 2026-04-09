@@ -1003,7 +1003,7 @@
   reg: VXKFNZKW9S 
   max_elec_consumption: 70
 - !CarModel
-  name: Grandland B Hybrid
+  name: Opel Grandland B Hybrid
   battery_power: 17.9
   fuel_capacity: 55
   abrp_name:
