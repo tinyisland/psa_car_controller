@@ -31,21 +31,37 @@ class Ignition(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'created_at': 'datetime',
         'type': 'str'
     }
 
     attribute_map = {
+        'created_at': 'createdAt',
         'type': 'type'
     }
 
-    def __init__(self, type=None):  # noqa: E501
+    def __init__(self, created_at=None, type=None):  # noqa: E501
         """Ignition - a model defined in Swagger"""  # noqa: E501
 
+        self._created_at = None
         self._type = None
         self.discriminator = None
 
+        if created_at is not None:
+            self.created_at = created_at
         if type is not None:
             self.type = type
+
+    @property
+    def created_at(self):
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+
+        self._created_at = created_at
+
+
 
     @property
     def type(self):
