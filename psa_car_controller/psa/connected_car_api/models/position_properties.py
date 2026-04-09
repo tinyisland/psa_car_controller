@@ -34,23 +34,26 @@ class PositionProperties(object):
         'heading': 'float',
         'signal_quality': 'float',
         'type': 'str',
-        'updated_at': 'datetime'
+        'updated_at': 'datetime',
+        'fix_status': 'str'
     }
 
     attribute_map = {
         'heading': 'heading',
         'signal_quality': 'signalQuality',
         'type': 'type',
-        'updated_at': 'createdAt'
+        'updated_at': 'createdAt',
+        'fix_status': 'fixStatus'
     }
 
-    def __init__(self, heading=None, signal_quality=None, type=None, updated_at=None):  # noqa: E501
+    def __init__(self, heading=None, signal_quality=None, type=None, updated_at=None, fix_status=None):  # noqa: E501
         """PositionProperties - a model defined in Swagger"""  # noqa: E501
 
         self._heading = None
         self._signal_quality = None
         self._type = None
         self._updated_at = None
+        self._fix_status = None
         self.discriminator = None
 
         if heading is not None:
@@ -61,6 +64,8 @@ class PositionProperties(object):
             self.type = type
         if updated_at is not None:
             self.updated_at = updated_at
+        if fix_status is not None:
+            self.fix_status = fix_status
 
     @property
     def heading(self):
@@ -155,6 +160,14 @@ class PositionProperties(object):
         """
 
         self._updated_at = updated_at
+
+    @property
+    def fix_status(self):
+        return self._fix_status
+
+    @fix_status.setter
+    def fix_status(self, fix_status):
+        self._fix_status = fix_status
 
     def to_dict(self):
         """Returns the model properties as a dict"""
