@@ -1002,4 +1002,12 @@
   abrp_name: opel:astrae:22:54:tour
   reg: VXKFNZKW9S 
   max_elec_consumption: 70
+- !CarModel
+  name: Grandland B Hybrid
+  battery_power: 17.9
+  fuel_capacity: 55
+  abrp_name:
+  reg: VXKKBDGK9S
+  max_elec_consumption: 70
+  max_fuel_consumption: 30
 
