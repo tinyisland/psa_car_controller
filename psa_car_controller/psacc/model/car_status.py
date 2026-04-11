@@ -15,10 +15,10 @@ logger = logging.getLogger(__name__)
 
 # pylint: disable=too-many-arguments,too-many-positional-arguments
 class CarStatus(Status):
-    def __init__(self, embedded=None, links=None, battery=None, doors_state=None, energy=None, environment=None,
+    def __init__(self, embedded=None, links=None, battery=None, doors_state=None, energy=None, energies=None, engines=None, environment=None,
                  ignition=None, kinetic=None, last_position=None, preconditionning=None, privacy=None, safety=None,
                  service=None, timed_odometer=None):  # noqa: E501
-        super().__init__(embedded, links, battery, doors_state, energy, environment, ignition, kinetic, last_position,
+        super().__init__(embedded, links, battery, doors_state, energy, energies, engines, environment, ignition, kinetic, last_position,
                          preconditionning, privacy, safety, service, timed_odometer)
         self.correct(False)
 
@@ -37,7 +37,10 @@ class CarStatus(Status):
         # always put electric energy first
         if len(self._energy) == 2 and self._energy[0].type != 'Electric':
             self._energy = self._energy[::-1]
-
+        if len(self._energies) == 2 and self._energies[0].type != 'Electric':
+            self._energies = self._energies[::-1]
+        if len(self._engines) == 2 and self._engines[0].type != 'Electric':
+            self._engines = self._engines[::-1]
         if self.timed_odometer is None:
             self.timed_odometer = VehicleOdometer()
         if electric_car:

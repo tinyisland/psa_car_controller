@@ -15,6 +15,8 @@
 from __future__ import absolute_import
 
 # import models into model package
+from psa_car_controller.psa.connected_car_api.models.global_temperature import Temperature
+from psa_car_controller.psa.connected_car_api.models.global_temperaturelevel import TemperatureLevel
 from psa_car_controller.psa.connected_car_api.models.adas import Adas
 from psa_car_controller.psa.connected_car_api.models.adas_park_assist import AdasParkAssist
 from psa_car_controller.psa.connected_car_api.models.alert import Alert
@@ -46,13 +48,27 @@ from psa_car_controller.psa.connected_car_api.models.e_coaching import ECoaching
 from psa_car_controller.psa.connected_car_api.models.e_coaching_links import ECoachingLinks
 from psa_car_controller.psa.connected_car_api.models.e_coaching_scores import ECoachingScores
 from psa_car_controller.psa.connected_car_api.models.energy import Energy
+from psa_car_controller.psa.connected_car_api.models.energies import Energies
+from psa_car_controller.psa.connected_car_api.models.energies_extension import EnergiesExtension
+from psa_car_controller.psa.connected_car_api.models.energies_extension_fuel import EnergiesExtensionFuel
+from psa_car_controller.psa.connected_car_api.models.energies_extension_fuel_consumptions import EnergiesExtensionFuelConsumptions
+from psa_car_controller.psa.connected_car_api.models.energies_extension_electric import EnergiesExtensionElectric
+from psa_car_controller.psa.connected_car_api.models.energies_extension_electric_charging import EnergiesExtensionElectricCharging
+from psa_car_controller.psa.connected_car_api.models.energies_extension_electric_battery import EnergiesExtensionElectricBattery
+from psa_car_controller.psa.connected_car_api.models.energies_extension_electric_battery_health import EnergiesExtensionElectricBatteryHealth
+from psa_car_controller.psa.connected_car_api.models.energies_extension_electric_battery_load import EnergiesExtensionElectricBatteryLoad
 from psa_car_controller.psa.connected_car_api.models.energy_battery import EnergyBattery
 from psa_car_controller.psa.connected_car_api.models.energy_battery_health import EnergyBatteryHealth
+from psa_car_controller.psa.connected_car_api.models.energy_battery_load import EnergyBatteryLoad
 from psa_car_controller.psa.connected_car_api.models.energy_charging import EnergyCharging
 from psa_car_controller.psa.connected_car_api.models.engine import Engine
 from psa_car_controller.psa.connected_car_api.models.engine_oil import EngineOil
+from psa_car_controller.psa.connected_car_api.models.engines import Engines
+from psa_car_controller.psa.connected_car_api.models.engines_extension import EnginesExtension
+from psa_car_controller.psa.connected_car_api.models.engines_extension_thermic import EnginesExtensionThermic
 from psa_car_controller.psa.connected_car_api.models.environment import Environment
 from psa_car_controller.psa.connected_car_api.models.environment_luminosity import EnvironmentLuminosity
+from psa_car_controller.psa.connected_car_api.models.environment_air import EnvironmentAir
 from psa_car_controller.psa.connected_car_api.models.event import Event
 from psa_car_controller.psa.connected_car_api.models.event_links import EventLinks
 from psa_car_controller.psa.connected_car_api.models.extension import Extension

@@ -36,6 +36,8 @@ class Status(object):
         'battery': 'Battery',
         'doors_state': 'DoorsState',
         'energy': 'list[Energy]',
+        'energies': 'list[Energies]',
+        'engines': 'list[Engines]',
         'environment': 'Environment',
         'ignition': 'Ignition',
         'kinetic': 'Kinetic',
@@ -44,7 +46,10 @@ class Status(object):
         'privacy': 'Privacy',
         'safety': 'Safety',
         'service': 'ServiceType',
-        'timed_odometer': 'VehicleOdometer'
+        'timed_odometer': 'VehicleOdometer',
+        'created_at': "datetime",
+        'updated_at': "datetime"
+        
     }
 
     attribute_map = {
@@ -53,6 +58,8 @@ class Status(object):
         'battery': 'battery',
         'doors_state': 'doorsState',
         'energy': 'energy',
+        'energies': 'energies',
+        'engines': 'engines',
         'environment': 'environment',
         'ignition': 'ignition',
         'kinetic': 'kinetic',
@@ -61,10 +68,14 @@ class Status(object):
         'privacy': 'privacy',
         'safety': 'safety',
         'service': 'service',
-        'timed_odometer': 'odometer'
+        'timed_odometer': 'odometer',
+        'created_at': "createdAt",
+        'updated_at': "updatedAt"
+
     }
 
-    def __init__(self, embedded=None, links=None, battery=None, doors_state=None, energy=None, environment=None, ignition=None, kinetic=None, last_position=None, preconditionning=None, privacy=None, safety=None, service=None, timed_odometer=None):  # noqa: E501
+    def __init__(self, embedded=None, links=None, battery=None, doors_state=None, energy=None, energies=None, engines=None, environment=None, ignition=None, kinetic=None, last_position=None, 
+                 preconditionning=None, privacy=None, safety=None, service=None, timed_odometer=None, created_at=None, updated_at=None):  # noqa: E501
         """Status - a model defined in Swagger"""  # noqa: E501
 
         self._embedded = None
@@ -72,6 +83,8 @@ class Status(object):
         self._battery = None
         self._doors_state = None
         self._energy = None
+        self._energies = None
+        self._engines = None
         self._environment = None
         self._ignition = None
         self._kinetic = None
@@ -81,6 +94,8 @@ class Status(object):
         self._safety = None
         self._service = None
         self._timed_odometer = None
+        self._created_at = None
+        self._updated_at = None
         self.discriminator = None
 
         if embedded is not None:
@@ -92,6 +107,10 @@ class Status(object):
             self.doors_state = doors_state
         if energy is not None:
             self.energy = energy
+        if energies is not None:
+            self.energies = energies
+        if engines is not None:
+            self.engines = engines
         if environment is not None:
             self.environment = environment
         if ignition is not None:
@@ -110,6 +129,10 @@ class Status(object):
             self.service = service
         if timed_odometer is not None:
             self.timed_odometer = timed_odometer
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
     def embedded(self):
@@ -219,6 +242,22 @@ class Status(object):
         """
 
         self._energy = energy
+
+    @property
+    def energies(self):
+        return self._energies
+
+    @energies.setter
+    def energies(self, energies):
+        self._energies = energies
+
+    @property
+    def engines(self):
+        return self._engines
+
+    @engines.setter
+    def engines(self, engines):
+        self._engines = engines
 
     @property
     def environment(self):
@@ -409,6 +448,24 @@ class Status(object):
 
         self._timed_odometer = timed_odometer
 
+    @property
+    def created_at(self):
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        self._updated_at = updated_at
+
+
+    
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
