@@ -32,23 +32,28 @@ class ServiceType(object):
     """
     swagger_types = {
         'type': 'str',
+        'created_at': 'datetime',
         'updated_at': 'datetime'
     }
 
     attribute_map = {
         'type': 'type',
+        'created_at': 'createdAt',
         'updated_at': 'updatedAt'
     }
 
-    def __init__(self, type=None, updated_at=None):  # noqa: E501
+    def __init__(self, type=None, created_at=None, updated_at=None):  # noqa: E501
         """ServiceType - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
+        self._created_at = None
         self._updated_at = None
         self.discriminator = None
 
         if type is not None:
             self.type = type
+        if created_at is not None:
+            self.created_at = created_at
         if updated_at is not None:
             self.updated_at = updated_at
 
@@ -78,6 +83,15 @@ class ServiceType(object):
             )
 
         self._type = type
+
+    @property
+    def created_at(self):
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        self._created_at = created_at
+
 
     @property
     def updated_at(self):
