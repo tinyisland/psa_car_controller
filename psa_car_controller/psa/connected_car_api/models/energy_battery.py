@@ -32,25 +32,30 @@ class EnergyBattery(object):
     """
     swagger_types = {
         'capacity': 'float',
-        'health': 'EnergyBatteryHealth'
+        'health': 'EnergyBatteryHealth',
+        'load': 'EnergyBatteryLoad'
     }
 
     attribute_map = {
         'capacity': 'capacity',
-        'health': 'health'
+        'health': 'health',
+        'load': 'load'
     }
 
-    def __init__(self, capacity=None, health=None):  # noqa: E501
+    def __init__(self, capacity=None, health=None, load=None):  # noqa: E501
         """EnergyBattery - a model defined in Swagger"""  # noqa: E501
 
         self._capacity = None
         self._health = None
+        self._load = None
         self.discriminator = None
 
         if capacity is not None:
             self.capacity = capacity
         if health is not None:
             self.health = health
+        if load is not None:
+            self.load = load
 
     @property
     def capacity(self):
@@ -95,6 +100,27 @@ class EnergyBattery(object):
         """
 
         self._health = health
+
+    @property
+    def load(self):
+        """Gets the load of this EnergyBattery.  # noqa: E501
+
+
+        :return: The load of this EnergyBattery.  # noqa: E501
+        :rtype: EnergyBatteryHealth
+        """
+        return self._load
+
+    @load.setter
+    def load(self, load):
+        """Sets the load of this EnergyBattery.
+
+
+        :param load: The load of this EnergyBattery.  # noqa: E501
+        :type: EnergyBatteryHealth
+        """
+
+        self._load = load
 
     def to_dict(self):
         """Returns the model properties as a dict"""
